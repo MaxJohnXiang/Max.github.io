@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="John Doe">
+    <meta name="description" content="Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
+  Example 1:
+  Input: &ldquo;babad&rdquo; Output: &ldquo;bab&rdquo; Note: &ldquo;aba&rdquo; is also a valid answer.
+  Example 2:
+  Input: &ldquo;cbbd&rdquo; Output: &ldquo;bb&rdquo;
+  首先暴力解法， 找出所有的子串, 然后判断是否是回文，如果是求长度。
+ 暴力解法 maxLen := 0 for i := 0; i &lt; n; i&#43;&#43; { for j := i; j &gt;= 0; j-- { tem := isPalindromic(s[i:j]) if len(tem) &gt;= maxLen { maxLen = len(tem) } } } 但是暴力解法重复做了很多次判断，例如字符串cdadbdc">
+    <meta name="keywords" content="blog,developer,personal">
+
+    
+      <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+    
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Longest Palindromic Substring"/>
+<meta name="twitter:description" content="Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
+  Example 1:
+  Input: &ldquo;babad&rdquo; Output: &ldquo;bab&rdquo; Note: &ldquo;aba&rdquo; is also a valid answer.
+  Example 2:
+  Input: &ldquo;cbbd&rdquo; Output: &ldquo;bb&rdquo;
+  首先暴力解法， 找出所有的子串, 然后判断是否是回文，如果是求长度。
+ 暴力解法 maxLen := 0 for i := 0; i &lt; n; i&#43;&#43; { for j := i; j &gt;= 0; j-- { tem := isPalindromic(s[i:j]) if len(tem) &gt;= maxLen { maxLen = len(tem) } } } 但是暴力解法重复做了很多次判断，例如字符串cdadbdc"/>
+
+    <meta property="og:title" content="Longest Palindromic Substring" />
+<meta property="og:description" content="Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
+  Example 1:
+  Input: &ldquo;babad&rdquo; Output: &ldquo;bab&rdquo; Note: &ldquo;aba&rdquo; is also a valid answer.
+  Example 2:
+  Input: &ldquo;cbbd&rdquo; Output: &ldquo;bb&rdquo;
+  首先暴力解法， 找出所有的子串, 然后判断是否是回文，如果是求长度。
+ 暴力解法 maxLen := 0 for i := 0; i &lt; n; i&#43;&#43; { for j := i; j &gt;= 0; j-- { tem := isPalindromic(s[i:j]) if len(tem) &gt;= maxLen { maxLen = len(tem) } } } 但是暴力解法重复做了很多次判断，例如字符串cdadbdc" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://maxjohnxiang.github.io/posts/leetcode5/" />
+<meta property="article:published_time" content="2019-11-07T13:42:11+08:00" />
+<meta property="article:modified_time" content="2019-11-07T13:42:11+08:00" />
+
+
+    
+      <base href="https://maxjohnxiang.github.io/posts/leetcode5/">
+    
+    <title>
+  Longest Palindromic Substring · Max的blog
+</title>
+
+    
+      <link rel="canonical" href="https://maxjohnxiang.github.io/posts/leetcode5/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://maxjohnxiang.github.io/css/coder.min.3219ef62ae52679b7a9c19043171c3cd9f523628c2a65f3ef247ee18836bc90b.css" integrity="sha256-MhnvYq5SZ5t6nBkEMXHDzZ9SNijCpl8&#43;8kfuGINryQs=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://maxjohnxiang.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://maxjohnxiang.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.80.0" />
+  </head>
+
+  
+  
+  <body class="colorscheme-light"
+        onload=" twemoji.parse(document.body); "
+  >
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://maxjohnxiang.github.io/">
+      Max的blog
+    </a>
+    
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://maxjohnxiang.github.io/posts/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://maxjohnxiang.github.io/projects/">Projects</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://maxjohnxiang.github.io/contact/">Contact me</a>
+          </li>
+        
+      
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Longest Palindromic Substring</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2019-11-07T13:42:11&#43;08:00'>
+                November 7, 2019
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              2-minute read
+            </span>
+          </div>
+          
+          
+        </div>
+      </header>
+
+      <div>
+        
+        <blockquote>
+<p>Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.</p>
+</blockquote>
+<blockquote>
+<p>Example 1:</p>
+</blockquote>
+<blockquote>
+<p>Input: &ldquo;babad&rdquo;
+Output: &ldquo;bab&rdquo;
+Note: &ldquo;aba&rdquo; is also a valid answer.</p>
+</blockquote>
+<blockquote>
+<p>Example 2:</p>
+</blockquote>
+<blockquote>
+<p>Input: &ldquo;cbbd&rdquo;
+Output: &ldquo;bb&rdquo;</p>
+</blockquote>
+<blockquote>
+<p>首先暴力解法， 找出所有的子串, 然后判断是否是回文，如果是求长度。</p>
+</blockquote>
+<h2 id="暴力解法">暴力解法</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">	maxLen <span style="color:#ff79c6">:=</span> <span style="color:#bd93f9">0</span>
+	<span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">:=</span> <span style="color:#bd93f9">0</span>; i &lt; n; i<span style="color:#ff79c6">++</span> {
+		<span style="color:#ff79c6">for</span> j <span style="color:#ff79c6">:=</span> i; j <span style="color:#ff79c6">&gt;=</span> <span style="color:#bd93f9">0</span>; j<span style="color:#ff79c6">--</span> {
+			tem <span style="color:#ff79c6">:=</span> <span style="color:#50fa7b">isPalindromic</span>(s[i:j])
+			<span style="color:#ff79c6">if</span> <span style="color:#8be9fd;font-style:italic">len</span>(tem) <span style="color:#ff79c6">&gt;=</span> maxLen {
+				maxLen = <span style="color:#8be9fd;font-style:italic">len</span>(tem)
+			}
+		}
+	}
+</code></pre></div><p>但是暴力解法重复做了很多次判断，例如字符串cdadbdc</p>
+<ul>
+<li><strong>aba</strong></li>
+<li>d<strong>aba</strong>d</li>
+<li>cd<strong>aba</strong>dc</li>
+</ul>
+<p>每次都遍历了这几个重复的子串，<strong>很多运算是重复的。</strong></p>
+<p>这个时候我们可以用一个状态state(start,end),来表是这个子串是否是回文，记录下子字符串是否是回文，来避免重复运算</p>
+<p>start 是字符串开始的长度</p>
+<p>end 是字符串结束的长度</p>
+<h2 id="拆解子问题">拆解子问题</h2>
+<blockquote>
+<p>if start=end 即 a  is palindromic// 一个字符的时候一定是回文</p>
+</blockquote>
+<blockquote>
+<p>if start +1 = end aa if s[startIndex] == s[endIndex]
+两个字符的时候， 如果第一个字符等于最后一字符，也一定是回文</p>
+</blockquote>
+<blockquote>
+<p>if start +2 = end  aba  s[startIndex] == s[endIndex] &amp;&amp; 中间那个b是回文 如果开始和最后的字符相等， 只要保证中间的字符是回文</p>
+</blockquote>
+<blockquote>
+<p>if start +3 = end  cbbc  s[startIndex] == s[endIndex] &amp;&amp;中间那个bb是回文中间那个b是回文 如果开始和最后的字符相等， 只要保证中间的字符是回文</p>
+</blockquote>
+<p>通过这个分析，我们得到了，如果这个字符串， 开始和结束相等 s[start]
+= s[end], 只要中间的子字符串是回文即可保证是回文</p>
+<p>所以这个字符串是否是回文可以拆解为这几个字问题。</p>
+<h2 id="状态转移方程">状态转移方程</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">state transition state（s,e）为true 取决于
+if 长度为1 无需判断
+if 长度为2 s[start] = s[end] 
+if 长度为3 s[start] = [end] and state(i+1, j-1)=true
+</code></pre></div><h3 id="解题思路">解题思路</h3>
+<h2 id="找出所有的子串">找出所有的子串</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">	<span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">:=</span> <span style="color:#bd93f9">0</span>; i &lt; n; i<span style="color:#ff79c6">++</span> {
+		<span style="color:#ff79c6">for</span> j <span style="color:#ff79c6">:=</span> i; j <span style="color:#ff79c6">&gt;=</span> <span style="color:#bd93f9">0</span>; j<span style="color:#ff79c6">--</span> {
+</code></pre></div><p>这个时候需要使用自顶向下的遍历方式， 因为state(s,e) 需要依赖于 state(s+1,
+e-1),这个状态，
+我们需要在计算最长的字符之前，先把state(s+1,e-1)，这些子状态求出来。
+例如判断dp[0][3]的时候需要依赖于dp[1][2]
+这个状态，所以我们需要先求出后面的结果。再求出前面的。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">i , j 0 0 true
+i , j 0 1 true  //依赖于 [1,0]
+i , j 0 2 true  // 依赖[1,1]
+i , j 0 3 false //依赖于[1,2]
+i , j 1 1 true  // 依赖于[2, 0]
+i , j 1 2 true  // 依赖于[2,1]
+i , j 1 3 true  // 依赖于[0, 2]
+i , j 2 2 true  // 依赖于[1,1]
+i , j 2 3 true  // 依赖于[3, 2]
+i , j 3 3 true  //依赖于[2,2]
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">longestPalindrome</span>(s <span style="color:#8be9fd">string</span>) <span style="color:#8be9fd">string</span> {
+	<span style="color:#6272a4">//Corner case
+</span><span style="color:#6272a4"></span>	<span style="color:#ff79c6">if</span> <span style="color:#8be9fd;font-style:italic">len</span>(s) <span style="color:#ff79c6">&lt;=</span> <span style="color:#bd93f9">1</span> { <span style="color:#6272a4">// 肯定是回文，直接返回
+</span><span style="color:#6272a4"></span>		<span style="color:#ff79c6">return</span> s
+	}
+	n <span style="color:#ff79c6">:=</span> <span style="color:#8be9fd;font-style:italic">len</span>(s)
+	<span style="color:#6272a4">//dp[s][e] true , if s[s:e] is palindromic
+</span><span style="color:#6272a4"></span>	dp <span style="color:#ff79c6">:=</span> <span style="color:#8be9fd;font-style:italic">make</span>([][]<span style="color:#8be9fd">bool</span>, <span style="color:#8be9fd;font-style:italic">len</span>(s))
+	<span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">:=</span> <span style="color:#bd93f9">0</span>; i &lt; n; i<span style="color:#ff79c6">++</span> {
+		dp[i] = <span style="color:#8be9fd;font-style:italic">make</span>([]<span style="color:#8be9fd">bool</span>, <span style="color:#8be9fd;font-style:italic">len</span>(s))
+	}
+
+	maxLen <span style="color:#ff79c6">:=</span> <span style="color:#bd93f9">0</span>
+	res <span style="color:#ff79c6">:=</span> <span style="color:#f1fa8c">&#34;&#34;</span>
+	<span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">:=</span> <span style="color:#bd93f9">0</span>; i &lt; n; i<span style="color:#ff79c6">++</span> {
+		<span style="color:#ff79c6">for</span> j <span style="color:#ff79c6">:=</span> i; j <span style="color:#ff79c6">&gt;=</span> <span style="color:#bd93f9">0</span>; j<span style="color:#ff79c6">--</span> {
+			<span style="color:#ff79c6">if</span> s[i] <span style="color:#ff79c6">==</span> s[j] <span style="color:#ff79c6">&amp;&amp;</span> (j<span style="color:#ff79c6">-</span>i <span style="color:#ff79c6">&lt;=</span> <span style="color:#bd93f9">2</span> <span style="color:#ff79c6">||</span> dp[i<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>][j<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>]) {
+				dp[i][j] = <span style="color:#ff79c6">true</span>
+			}
+			<span style="color:#ff79c6">if</span> dp[i][j] <span style="color:#ff79c6">&amp;&amp;</span> j<span style="color:#ff79c6">-</span>i<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span> <span style="color:#ff79c6">&gt;=</span> maxLen {
+				maxLen = j <span style="color:#ff79c6">-</span> i <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>
+				res = s[i : j<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>]
+			}
+		}
+	}
+	<span style="color:#ff79c6">return</span> res
+}
+</code></pre></div>
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+        <p>Enter a text here.</p>
+      
+      
+        ©
+        
+          2019 -
+        
+        2022
+         John Doe 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+        
+      
+    </section>
+  </footer>
+
+    </main>
+
+    
+
+    
+
+    <script>
+(function(f, a, t, h, o, m){
+	a[h]=a[h]||function(){
+		(a[h].q=a[h].q||[]).push(arguments)
+	};
+	o=f.createElement('script'),
+	m=f.getElementsByTagName('script')[0];
+	o.async=1; o.src=t; o.id='fathom-script';
+	m.parentNode.insertBefore(o,m)
+})(document, window, '//analytics.example.com/tracker.js', 'fathom');
+fathom('set', 'siteId', 'ABCDE');
+fathom('trackPageview');
+</script>
+
+
+  </body>
+
+</html>

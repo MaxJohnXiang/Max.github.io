@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Max的blog</title>
+    <link>https://maxjohnxiang.github.io/posts/</link>
+    <description>Recent content in Posts on Max的blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 19 Jun 2020 00:00:00 +0800</lastBuildDate><atom:link href="https://maxjohnxiang.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux性能优化实战</title>
+      <link>https://maxjohnxiang.github.io/posts/20200606211114-linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98/</link>
+      <pubDate>Fri, 19 Jun 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://maxjohnxiang.github.io/posts/20200606211114-linux%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%AE%9E%E6%88%98/</guid>
+      <description>内存  地址空间 内存分配 缓存命中率 内存泄露   CPU 上下文 而是因为系统在很短的时间内，将 CPU 轮流分配给它们，造成多任务同时运行的错觉。 Neword 网络  CIDR 网络协议 网络请求 网络包的接收流程 网络指标   Docker  优点 概念 基础技术 常用命令 案例    内存 地址空间 内存映射 地址空间(存储的抽象)   抽象的原因
+ 用户可以寻址每个字节, 可以轻易的破坏操作系统 多个进程运行的时候, 地址冲突      地址空间的概念
+ 地址空间是一个可用于寻址的的一套地址集合  电话号码的空间是0000 0000 9999999 ipv4的地址空间是32bit 数字, 所以地址空间为 2^32-1 com 是2-64个字符后面接着.com 域名的字符组成的空间        虚拟内存</description>
+    </item>
+    
+    <item>
+      <title>Money Management | 金融理财</title>
+      <link>https://maxjohnxiang.github.io/posts/20200611235429-money_management_%E9%87%91%E8%9E%8D%E7%90%86%E8%B4%A2/</link>
+      <pubDate>Sat, 13 Jun 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://maxjohnxiang.github.io/posts/20200611235429-money_management_%E9%87%91%E8%9E%8D%E7%90%86%E8%B4%A2/</guid>
+      <description>股票基础 股票上涨 买盘和卖盘, 有人愿意用10.01 卖, 没人愿意买. 此时股价不变, 如果有人愿意买股价变 持有方愿意更低价格卖出, 此时股价降低
+股票上涨原因  公司资产    市净率(PB)
+ Market price per share(股价) / Book value per share(净资产)      市盈率(PE) Price to Earnings ratio
+  Definition
+ Value Per Unit (股价) / Earning per unit (每股盈利金额) Market Value / Income production      Example:
+  PPS(Price per share ) $10
+  Earning per share</description>
+    </item>
+    
+    <item>
+      <title>Recursion | 递归</title>
+      <link>https://maxjohnxiang.github.io/posts/20200608174445-recursion_%E9%80%92%E5%BD%92/</link>
+      <pubDate>Thu, 11 Jun 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://maxjohnxiang.github.io/posts/20200608174445-recursion_%E9%80%92%E5%BD%92/</guid>
+      <description>概念  表象上 : function call itself 实际上: Boil down a big problem to smaller ones implementation :  Base case smallest problem Recursive rule how to make problem smaller (if we can resolve problem with a samller case )    Call Stack Global accessible resource Usage: store the local information for each recursion function
+calculate a ^ b  how to calculate a ^ b (where a is an integer and b is also an integer we do not care about the corner case where a = 0 or b &amp;lt; 0 for now ) Time : O(log(b)) Space : O(log(b))</description>
+    </item>
+    
+    <item>
+      <title>内存管理</title>
+      <link>https://maxjohnxiang.github.io/posts/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Sun, 07 Jun 2020 22:53:25 +0800</pubDate>
+      
+      <guid>https://maxjohnxiang.github.io/posts/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86/</guid>
+      <description>Table of Contents  内存  地址空间 内存分配 缓存命中率 内存泄露    内存 地址空间 内存映射 地址空间(存储的抽象)   抽象的原因
+ 用户可以寻址每个字节, 可以轻易的破坏操作系统 多个进程运行的时候, 地址冲突    地址空间的概念
+ 地址空间是一个可用于寻址的的一套地址集合  电话号码的空间是0000 0000 9999999 ipv4的地址空间是32bit 数字, 所以地址空间为 232-1 com 是2-64个字符后面接着.com 域名的字符组成的空间      虚拟内存
+ 有了虚拟内存机制之后，每次访问可以使用更易理解的虚拟地址，让CPU转换成实际的物理地址访问内存，降低了直接使用、管理物理内存的门槛 物理内存按大小被分成页框、页，每块物理内存可以被映射为一个或多个虚拟内存页。这块映射关系，由操作系统的页表来保存，页表是有层级的 高层级的页表包含指向低层级页表的物理地址，指向顶级的页表的地址，驻留在寄存器中 page cache 最常见的操作，每次读取文件时，数据都会被放入页面缓存中，以避免后续读取时所进行昂贵的磁盘访问。    内核空间
+ 用户只有进入内核空间的时候,才能方位内核空间的内存    用户空间
+  内存映射
+ Page table 内核为每个进程维护了一张页表, 记录虚拟地址和物理地址的映射关系.</description>
+    </item>
+    
+    <item>
+      <title>CPU负载</title>
+      <link>https://maxjohnxiang.github.io/posts/cpu%E8%B4%9F%E8%BD%BD/</link>
+      <pubDate>Wed, 27 May 2020 00:16:27 +0800</pubDate>
+      
+      <guid>https://maxjohnxiang.github.io/posts/cpu%E8%B4%9F%E8%BD%BD/</guid>
+      <description>查看 CPU 信息 物理 cpu 数（physical cpu）  指主板上实际插入的cpu硬件个数（socket)
+ 核心（core）  CPU的核心数是指物理上，也就是硬件上存在着几个核心。比如,双核就是包括2个相对独立的CPU核心单元组，四核就包含4个相对独立的CPU核心单元组
+ 同时多线程技术（simultaneous multithreading）和 超线程技术（hyper–threading/HT） &amp;gt;&amp;gt; 简单地说，就是模拟出的CPU核心数。比如，可以通过一个CPU核心数模拟出2线程的CPU，也就是说，这个单核心的CPU被模拟成了一个类似双核心CPU的功能。我们从任务管理器的性能标签页中看到的是两个CPU。  查看 cpu 信息命令 查看物理 cpu 数：
+cat /proc/cpuinfo| grep &amp;quot;physical id&amp;quot;| sort| uniq| wc -l
+查看每个物理 cpu 中 核心数(core 数)：
+cat /proc/cpuinfo | grep &amp;quot;cpu cores&amp;quot; | uniq
+查看总的逻辑 cpu 数（processor 数）：
+cat /proc/cpuinfo| grep &amp;quot;processor&amp;quot;| wc -l 查看 cpu 型号：
+cat /proc/cpuinfo | grep name | cut -f2 -d: | uniq -c 判断 cpu 是否 64 位：</description>
+    </item>
+    
+    <item>
+      <title>[19] Remove Nth Node From End of List</title>
+      <link>https://maxjohnxiang.github.io/posts/0019.remove-nth-node-from-end-of-list/</link>
+      <pubDate>Thu, 26 Mar 2020 12:03:14 +0800</pubDate>
+      
+      <guid>https://maxjohnxiang.github.io/posts/0019.remove-nth-node-from-end-of-list/</guid>
+      <description>https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/
+Given a linked list, remove the n-th node from the end of list and return its head.
+Example:
+Given linked list: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, and n = 2.
+After removing the second node from the end, the linked list becomes 1-&amp;gt;2-&amp;gt;3-&amp;gt;5.
+Note:
+Given n will always be valid.
+Follow up:
+Could you do this in one pass?
+Thinking  难点是怎么找到倒数第N个节点,链表不同于数组。不能使用任何遍历的方式， 所以对于找到中间节点， 找到倒数N个节点,都是通过双指针快慢指针的方式找到  找到中间的节点
+func FindMiddle(head *ListNode) *ListNode { slow , fast := head , head for fast !</description>
+    </item>
+    
+    <item>
+      <title>用使Go Micro写微服务</title>
+      <link>https://maxjohnxiang.github.io/posts/go-micro/</link>
+      <pubDate>Wed, 25 Dec 2019 18:13:06 +0800</pubDate>
+      
+      <guid>https://maxjohnxiang.github.io/posts/go-micro/</guid>
+      <description>##介绍 go-micro 是微服务开发组件库， 提供一些方便的功能.
+ 服务发现 负载均衡 消息编码 异步消息 可插拔接口  安装  go 依赖  brew install protobuf 安装php 依赖
+PROTOC_ZIP=protoc-3.7.1-linux-x86_64.zip curl -OL https://github.com/protocolbuffers/protobuf/releases/download/v3.7.1/$PROTOC_ZIP sudo unzip -o $PROTOC_ZIP -d /usr/local bin/protoc sudo unzip -o $PROTOC_ZIP -d /usr/local &amp;#39;include/*&amp;#39; rm -f $PROTOC_ZIP go get -u -v github.com/golang/protobuf/{proto,protoc-gen-go} go get -u -v github.com/micro/protoc-gen-micro php 相关依赖
+# 安装 php 扩展 pecl install protobuf pecl install grpc git clone -b $(curl -L https://grpc.io/release) https://github.</description>
+    </item>
+    
+    <item>
+      <title>[10] Regular Expression Matching</title>
+      <link>https://maxjohnxiang.github.io/posts/10.regular-expression-matching/</link>
+      <pubDate>Tue, 19 Nov 2019 14:56:46 +0800</pubDate>
+      
+      <guid>https://maxjohnxiang.github.io/posts/10.regular-expression-matching/</guid>
+      <description>##Question
+ Given an input string (s) and a pattern (p), implement regular expression matching with support for &amp;lsquo;.&amp;rsquo; and &amp;lsquo;*&amp;rsquo;.
+&amp;lsquo;.&amp;rsquo; Matches any single character. &#39;*&#39; Matches zero or more of the preceding element.
+The matching should cover the entire input string (not partial).
+ Thinking &#39;.&#39; Matches any single character.
+  这个和好理解， 就是一个万能字符。 可以替代任意的字符
+  这是重点需要理解的地方, &#39;*&#39; Matches zero or more of the preceding element. Matches between zero and unlimited times, as many times as possible, giving back as needed 匹配前面的子表达式零次或多次。例如，zo*能匹配“z”以及“zoo”。*等价于{0,}。</description>
+    </item>
+    
+    <item>
+      <title>15 3Sum</title>
+      <link>https://maxjohnxiang.github.io/posts/15.-3sum/</link>
+      <pubDate>Wed, 13 Nov 2019 17:44:18 +0800</pubDate>
+      
+      <guid>https://maxjohnxiang.github.io/posts/15.-3sum/</guid>
+      <description>Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.
+Note:
+The solution set must not contain duplicate triplets.
+Example:
+Given array nums = [-1, 0, 1, 2, -1, -4],
+A solution set is: [ [-1, 0, 1], [-1, -1, 2] ] [-1,0,1,2,-1,-4]</description>
+    </item>
+    
+    <item>
+      <title>Remove Nth Node From End of List</title>
+      <link>https://maxjohnxiang.github.io/posts/remove-nth-node-from-end-of-list/</link>
+      <pubDate>Tue, 12 Nov 2019 23:31:32 +0800</pubDate>
+      
+      <guid>https://maxjohnxiang.github.io/posts/remove-nth-node-from-end-of-list/</guid>
+      <description>Description  Given a linked list, remove the n-th node from the end of list and return its head.
+Example:
+Given linked list: 1-&amp;gt;2-&amp;gt;3-&amp;gt;4-&amp;gt;5, and n = 2.
+After removing the second node from the end, the linked list becomes 1-&amp;gt;2-&amp;gt;3-&amp;gt;5.
+Note: Given n will always be valid.
+ Thinking 因为链表是没有下标的， 所以找到第n 个， 或者倒数第n个， 或者找中间位置，都必须通过快慢指针实现。
+  找到第n个，快指针先走length - n个位置 , 再快慢指针一起走，等快指针走完了， 慢指针刚好走了n个。 找到中间位置， 同时间开始走，快指针速度是满指针两倍， 快指针走完了, 满指针走到中间 找到第n个位置， 快指针走n个位置，再快慢指针一起走， 等快指针走完了，满指正走到倒数第n个   Solution func removeNthFromEnd(head *ListNode, n int) *ListNode { start := &amp;amp;ListNode{} slow, fast := start, start start.</description>
+    </item>
+    
+    <item>
+      <title>[11] Container With Most Water</title>
+      <link>https://maxjohnxiang.github.io/posts/11.contrinerwithmostwater/</link>
+      <pubDate>Tue, 12 Nov 2019 15:09:23 +0800</pubDate>
+      
+      <guid>https://maxjohnxiang.github.io/posts/11.contrinerwithmostwater/</guid>
+      <description>Question  Given n non-negative integers a1, a2, &amp;hellip;, an , where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines, which together with x-axis forms a container, such that the container contains the most water.
+Note: You may not slant the container and n is at least 2.</description>
+    </item>
+    
+    <item>
+      <title>Economics</title>
+      <link>https://maxjohnxiang.github.io/posts/economics/</link>
+      <pubDate>Sun, 10 Nov 2019 11:14:39 +0800</pubDate>
+      
+      <guid>https://maxjohnxiang.github.io/posts/economics/</guid>
+      <description>why we shuold study economic in 21 century  First reason tudy economic is that it will help you understand the world in which you live. The second reason to study economics is th it will make you a more astute  </description>
+    </item>
+    
+    <item>
+      <title>6.zigzag-conversion</title>
+      <link>https://maxjohnxiang.github.io/posts/6.zigzag-conversion/</link>
+      <pubDate>Sat, 09 Nov 2019 09:13:34 +0800</pubDate>
+      
+      <guid>https://maxjohnxiang.github.io/posts/6.zigzag-conversion/</guid>
+      <description>题目 The string &amp;ldquo;PAYPALISHIRING&amp;rdquo; is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
+P A H N A P L S I I G Y I R And then read line by line: &amp;ldquo;PAHNAPLSIIGYIR&amp;rdquo;
+Write the code that will take a string and make this conversion given a number of rows:</description>
+    </item>
+    
+    <item>
+      <title>Longest Palindromic Substring</title>
+      <link>https://maxjohnxiang.github.io/posts/leetcode5/</link>
+      <pubDate>Thu, 07 Nov 2019 13:42:11 +0800</pubDate>
+      
+      <guid>https://maxjohnxiang.github.io/posts/leetcode5/</guid>
+      <description>Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
+  Example 1:
+  Input: &amp;ldquo;babad&amp;rdquo; Output: &amp;ldquo;bab&amp;rdquo; Note: &amp;ldquo;aba&amp;rdquo; is also a valid answer.
+  Example 2:
+  Input: &amp;ldquo;cbbd&amp;rdquo; Output: &amp;ldquo;bb&amp;rdquo;
+  首先暴力解法， 找出所有的子串, 然后判断是否是回文，如果是求长度。
+ 暴力解法 maxLen := 0 for i := 0; i &amp;lt; n; i++ { for j := i; j &amp;gt;= 0; j-- { tem := isPalindromic(s[i:j]) if len(tem) &amp;gt;= maxLen { maxLen = len(tem) } } } 但是暴力解法重复做了很多次判断，例如字符串cdadbdc</description>
+    </item>
+    
+    <item>
+      <title>为什么只看视频/书却学不会东西。</title>
+      <link>https://maxjohnxiang.github.io/posts/learning-1/</link>
+      <pubDate>Thu, 07 Nov 2019 13:42:11 +0800</pubDate>
+      
+      <guid>https://maxjohnxiang.github.io/posts/learning-1/</guid>
+      <description>很多人都在反映一个问题，看了很多书，很多视频却没学到多少东西，技术仍然很菜。这是为什么呢。 原因其实很简单，
+你其实什么都没会， 但是你的大脑欺骗你。   这个时候你的大脑只是单纯的输入，在你大脑形成了短期记忆，让你认为你理解了，过一段时间浅层记忆消失，你大概率只记得几个名词， 没有任何实用价值。 举个例子说明，有一天你学习算法，你看了一本书，或者视频， 学习了递归的这个概念。  以下是另一个可能更有利于理解递归过程的解释： 递归（英语：Recursion），又译为递回，在数学与计算机科学中，是指在函数的定义中使用函数自身的方法。递归一词还较常用于描述以自相似方法重复事物的过程。例如，当两面镜子相互之间近似平行时，镜中嵌套的图像是以无限递归的形式出现的。也可以理解为自我复制的过程。 我们已经完成了吗？如果完成了，返回结果。如果没有这样的终止条件，递归将会永远地继续下去。 如果没有，则简化问题，解决较容易的问题，并将结果组装成原始问题的解决办法。然后返回该解决办法。 这样就有一种更有趣的描述：“为了理解递归，则必须首先理解递归。”或者更准确地，按照安德鲁·普洛特金的解释：“如果你已经知道了什么是递归，只需记住答案。否则，找一个比你更接近侯世达的人；然后让他／她来告诉你什么是递归。”[1]
+  斐波那契数列是典型的递归案例：
+ if n== 1 { return 1 } return func(n-1) + func(n-2) } 这个时候，你很容易感觉自己已经学会了递归的这个概念， 别人问你递归是什么， 你张嘴回答: 递归就是自己调用自己。 但其实，这个时候， 你只是记忆了文章的一些知识点，或者几句话 当你遇到一个真实的情况， 你就蒙了。例如这个题目
+ 第一天悟空吃掉桃子总数一半多一个，第二天又将剩下的桃子吃掉一半多一个，以后每天吃掉前一天剩下的一半多一个，到第n天准备吃的时候只剩下一个桃子。聪明的你，请帮悟空算一下，他第一天开始吃的时候桃子一共有多少个呢？
+ 浅层知识的四个层次 你会遇到如下几种情况
+ 你想不起来要用递归 我知道用递归但是我学习递归的时候，使用的是斐波那契序列 fn = fn(n-1) + fn(n-2)， 这个感觉和斐波那契差别太大。 你知道要用递归，但是你不知道这个题目要怎么对应递归。 你写了一部分递归，但是代码出现了问题， 跑不出正确的答案。  在做这倒题目的时候， 学过了知道第一直觉是用递归， 第十天，桃子只剩下一个桃子，是明显是递归的终止条件。 (递归一定要有终止条件， 否则是无线递归，直到溢出)
+那我就写出来了。
+func stolenPeach(n) { if n == 10 { return 1 } } 然后知道递归需要调用自己。则可以这么写</description>
+    </item>
+    
+    <item>
+      <title>(Hu)go Template Primer</title>
+      <link>https://maxjohnxiang.github.io/posts/hugo-template-primer/</link>
+      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://maxjohnxiang.github.io/posts/hugo-template-primer/</guid>
+      <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
+This document is a brief primer on using go templates.</description>
+    </item>
+    
+  </channel>
+</rss>

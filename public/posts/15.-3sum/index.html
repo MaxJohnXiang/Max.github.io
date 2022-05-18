@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="John Doe">
+    <meta name="description" content="Given an array nums of n integers, are there elements a, b, c in nums such that a &#43; b &#43; c = 0? Find all unique triplets in the array which gives the sum of zero.
+Note:
+The solution set must not contain duplicate triplets.
+Example:
+Given array nums = [-1, 0, 1, 2, -1, -4],
+A solution set is: [ [-1, 0, 1], [-1, -1, 2] ] [-1,0,1,2,-1,-4]">
+    <meta name="keywords" content="blog,developer,personal">
+
+    
+      <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+    
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="15 3Sum"/>
+<meta name="twitter:description" content="Given an array nums of n integers, are there elements a, b, c in nums such that a &#43; b &#43; c = 0? Find all unique triplets in the array which gives the sum of zero.
+Note:
+The solution set must not contain duplicate triplets.
+Example:
+Given array nums = [-1, 0, 1, 2, -1, -4],
+A solution set is: [ [-1, 0, 1], [-1, -1, 2] ] [-1,0,1,2,-1,-4]"/>
+
+    <meta property="og:title" content="15 3Sum" />
+<meta property="og:description" content="Given an array nums of n integers, are there elements a, b, c in nums such that a &#43; b &#43; c = 0? Find all unique triplets in the array which gives the sum of zero.
+Note:
+The solution set must not contain duplicate triplets.
+Example:
+Given array nums = [-1, 0, 1, 2, -1, -4],
+A solution set is: [ [-1, 0, 1], [-1, -1, 2] ] [-1,0,1,2,-1,-4]" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://maxjohnxiang.github.io/posts/15.-3sum/" />
+<meta property="article:published_time" content="2019-11-13T17:44:18+08:00" />
+<meta property="article:modified_time" content="2019-11-13T17:44:18+08:00" />
+
+
+    
+      <base href="https://maxjohnxiang.github.io/posts/15.-3sum/">
+    
+    <title>
+  15 3Sum · Max的blog
+</title>
+
+    
+      <link rel="canonical" href="https://maxjohnxiang.github.io/posts/15.-3sum/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://maxjohnxiang.github.io/css/coder.min.3219ef62ae52679b7a9c19043171c3cd9f523628c2a65f3ef247ee18836bc90b.css" integrity="sha256-MhnvYq5SZ5t6nBkEMXHDzZ9SNijCpl8&#43;8kfuGINryQs=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://maxjohnxiang.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://maxjohnxiang.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.80.0" />
+  </head>
+
+  
+  
+  <body class="colorscheme-light"
+        onload=" twemoji.parse(document.body); "
+  >
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://maxjohnxiang.github.io/">
+      Max的blog
+    </a>
+    
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://maxjohnxiang.github.io/posts/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://maxjohnxiang.github.io/projects/">Projects</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://maxjohnxiang.github.io/contact/">Contact me</a>
+          </li>
+        
+      
+      
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">15 3Sum</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2019-11-13T17:44:18&#43;08:00'>
+                November 13, 2019
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              2-minute read
+            </span>
+          </div>
+          
+          
+        </div>
+      </header>
+
+      <div>
+        
+        <blockquote>
+<p>Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.</p>
+<p>Note:</p>
+<p>The solution set must not contain duplicate triplets.</p>
+<p>Example:</p>
+<p>Given array nums = [-1, 0, 1, 2, -1, -4],</p>
+<p>A solution set is:
+[
+[-1, 0, 1],
+[-1, -1, 2]
+]
+[-1,0,1,2,-1,-4]</p>
+</blockquote>
+<h2 id="thinking">Thinking</h2>
+<ol>
+<li>a + b + c = 0  ,可以变成 a + b = - c</li>
+<li>这个数组是无须的， 但是题目要求是返回这个数组的元素，而非下标，
+所以可以将数组排序利于之后的处理  例如这个数组[-1,0,1,2,-1,-4] 排序为 [-4, -1, -1, 0 , 1 , 2]</li>
+<li>a + b  = -c , 我们可以先确定c 使 -c = a + b, 把将这个问题转换为，
+在数组中找两个数的和= -c
+所以这个题目可以转换为
+<ol>
+<li>设第一个数为c =nums[1], 在剩下的数组中找到两个数之和等于x + y =-nums[1]，放入结果集合中</li>
+<li>设第一个数为c =nums[2], 在剩下的数组中找到两个数之和等于x + y =-nums[2]，放入结果集合中</li>
+<li>设第一个数为c =nums[3], 在剩下的数组中找到两个数之和等于x + y =-nums[3]，放入结果集合中</li>
+</ol>
+</li>
+</ol>
+<h2 id="solution">Solution</h2>
+<h3 id="先使一个数为c">先使一个数为c</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">:=</span> <span style="color:#bd93f9">0</span>; i &lt; <span style="color:#8be9fd;font-style:italic">len</span>(nums)<span style="color:#ff79c6">-</span><span style="color:#bd93f9">2</span>; i<span style="color:#ff79c6">++</span> {
+      sum <span style="color:#ff79c6">:=</span> <span style="color:#ff79c6">-</span>nums[i]
+      <span style="color:#6272a4">//在剩余的数字 i+1 中找到 两数字之和 = -c
+</span><span style="color:#6272a4"></span>}
+</code></pre></div><h3 id="在剩余的数字-i1-中找到-两数字之和--c">在剩余的数字 i+1 中找到 两数字之和 = c</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6272a4">//
+</span><span style="color:#6272a4"></span>lo <span style="color:#ff79c6">:=</span> i <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>
+hi <span style="color:#ff79c6">:=</span> <span style="color:#8be9fd;font-style:italic">len</span>(nums) <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>
+          <span style="color:#ff79c6">for</span> lo &lt; hi {
+                <span style="color:#6272a4">//找到了一个两个数之后为c
+</span><span style="color:#6272a4"></span>                  <span style="color:#ff79c6">if</span> nums[lo]<span style="color:#ff79c6">+</span>nums[hi] <span style="color:#ff79c6">==</span> sum {
+                          res = <span style="color:#8be9fd;font-style:italic">append</span>(res, []<span style="color:#8be9fd">int</span>{nums[i], nums[lo], nums[hi]})
+                          <span style="color:#6272a4">//remove duplicates
+</span><span style="color:#6272a4"></span>                         <span style="color:#6272a4">//然后缩小范围继续寻找
+</span><span style="color:#6272a4"></span>                          lo<span style="color:#ff79c6">++</span>
+                          hi<span style="color:#ff79c6">--</span>
+
+                  <span style="color:#6272a4">//两数字之和大于-c，右指针--， 让和减小(前提数组有序)
+</span><span style="color:#6272a4"></span>                  } <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> nums[lo]<span style="color:#ff79c6">+</span>nums[hi] &gt; sum {
+                          hi<span style="color:#ff79c6">--</span>
+                  } <span style="color:#ff79c6">else</span> {
+                          lo<span style="color:#ff79c6">++</span>
+                  }
+          }
+</code></pre></div><h3 id="去掉重复的项">去掉重复的项</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#6272a4">//如果下一个数字相等， 那么虽然符合结果， 但是结果是重复的，固排除
+</span><span style="color:#6272a4"></span><span style="color:#ff79c6">for</span> lo &lt; hi <span style="color:#ff79c6">&amp;&amp;</span> nums[lo] <span style="color:#ff79c6">==</span> nums[lo<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>] {
+        lo<span style="color:#ff79c6">++</span>
+}
+<span style="color:#ff79c6">for</span> lo &lt; hi <span style="color:#ff79c6">&amp;&amp;</span> nums[hi] <span style="color:#ff79c6">==</span> nums[hi<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>] {
+        hi<span style="color:#ff79c6">--</span>
+}
+</code></pre></div><ol start="4">
+<li>完整解法</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8be9fd;font-style:italic">func</span> <span style="color:#50fa7b">threeSum</span>(nums []<span style="color:#8be9fd">int</span>) [][]<span style="color:#8be9fd">int</span> {
+	<span style="color:#6272a4">// 排序后，可以按规律查找
+</span><span style="color:#6272a4"></span>	sort.<span style="color:#50fa7b">Ints</span>(nums)
+	res <span style="color:#ff79c6">:=</span> [][]<span style="color:#8be9fd">int</span>{}
+	<span style="color:#6272a4">//需要保证最少有三个数字， 如果少于三个数， 则没有结果
+</span><span style="color:#6272a4"></span>	<span style="color:#ff79c6">for</span> i <span style="color:#ff79c6">:=</span> <span style="color:#bd93f9">0</span>; i &lt; <span style="color:#8be9fd;font-style:italic">len</span>(nums)<span style="color:#ff79c6">-</span><span style="color:#bd93f9">2</span>; i<span style="color:#ff79c6">++</span> {
+		lo <span style="color:#ff79c6">:=</span> i <span style="color:#ff79c6">+</span> <span style="color:#bd93f9">1</span>
+		hi <span style="color:#ff79c6">:=</span> <span style="color:#8be9fd;font-style:italic">len</span>(nums) <span style="color:#ff79c6">-</span> <span style="color:#bd93f9">1</span>
+		sum <span style="color:#ff79c6">:=</span> <span style="color:#ff79c6">-</span>nums[i]
+		<span style="color:#ff79c6">if</span> i <span style="color:#ff79c6">==</span> <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">||</span> (i &gt; <span style="color:#bd93f9">0</span> <span style="color:#ff79c6">&amp;&amp;</span> nums[i] <span style="color:#ff79c6">!=</span> nums[i<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>]) {
+			<span style="color:#ff79c6">for</span> lo &lt; hi {
+				<span style="color:#ff79c6">if</span> nums[lo]<span style="color:#ff79c6">+</span>nums[hi] <span style="color:#ff79c6">==</span> sum {
+					res = <span style="color:#8be9fd;font-style:italic">append</span>(res, []<span style="color:#8be9fd">int</span>{nums[i], nums[lo], nums[hi]})
+					<span style="color:#6272a4">//remove duplicates
+</span><span style="color:#6272a4"></span>					<span style="color:#ff79c6">for</span> lo &lt; hi <span style="color:#ff79c6">&amp;&amp;</span> nums[lo] <span style="color:#ff79c6">==</span> nums[lo<span style="color:#ff79c6">+</span><span style="color:#bd93f9">1</span>] {
+						lo<span style="color:#ff79c6">++</span>
+					}
+					<span style="color:#ff79c6">for</span> lo &lt; hi <span style="color:#ff79c6">&amp;&amp;</span> nums[hi] <span style="color:#ff79c6">==</span> nums[hi<span style="color:#ff79c6">-</span><span style="color:#bd93f9">1</span>] {
+						hi<span style="color:#ff79c6">--</span>
+					}
+					lo<span style="color:#ff79c6">++</span>
+					hi<span style="color:#ff79c6">--</span>
+				} <span style="color:#ff79c6">else</span> <span style="color:#ff79c6">if</span> nums[lo]<span style="color:#ff79c6">+</span>nums[hi] &gt; sum {
+					hi<span style="color:#ff79c6">--</span>
+				} <span style="color:#ff79c6">else</span> {
+					lo<span style="color:#ff79c6">++</span>
+				}
+			}
+		}
+	}
+	<span style="color:#ff79c6">return</span> res
+}
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">st=&gt;start:  遍历数组
+e=&gt;end: 结束
+op1=&gt;operation: 找到一个数字nums[i]|past
+op2=&gt;operation: 在剩下的数组找求两数之和|current
+op3=&gt;operation: 移动左右指针,靠近sum|current
+op5=&gt;operation: 等于sum,将结果加入到数组中|current
+cond1=&gt;condition: 和-nums[i]比较
+cond2=&gt;condition: 遍历是否结束
+
+
+st-&gt;op1-&gt;op2-&gt;cond1
+cond1(yes)-&gt;op5
+cond1(no)-&gt;op3
+op5-&gt;cond2
+cond2(yes)-&gt;e
+cond2(no)-&gt;op1
+
+</code></pre></div>
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+        <p>Enter a text here.</p>
+      
+      
+        ©
+        
+          2019 -
+        
+        2022
+         John Doe 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+        
+      
+    </section>
+  </footer>
+
+    </main>
+
+    
+
+    
+
+    <script>
+(function(f, a, t, h, o, m){
+	a[h]=a[h]||function(){
+		(a[h].q=a[h].q||[]).push(arguments)
+	};
+	o=f.createElement('script'),
+	m=f.getElementsByTagName('script')[0];
+	o.async=1; o.src=t; o.id='fathom-script';
+	m.parentNode.insertBefore(o,m)
+})(document, window, '//analytics.example.com/tracker.js', 'fathom');
+fathom('set', 'siteId', 'ABCDE');
+fathom('trackPageview');
+</script>
+
+
+  </body>
+
+</html>
